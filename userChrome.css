@@ -1,0 +1,86 @@
+/* hide the horizontal tabs bar */
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"])
+  #TabsToolbar
+  > .toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+  visibility: collapse !important;
+}
+/********************************/
+
+/* add the close window button right to the hamburger menu */
+/* Adding empty space for buttons */
+/* #nav-bar { */
+/*   margin-right: 98px; */
+/* } */
+
+/* 15px for dragging whole window by mouse*/
+#titlebar {
+  appearance: none !important;
+  height: 0px;
+}
+/* Remove close button*/
+.titlebar-buttonbox-container {
+  display: none;
+}
+
+/* Fix for main menu calling by Alt button */
+/* #titlebar > #toolbar-menubar { */
+/*   margin-top: 10px; */
+/* } */
+
+/* Move minimize/restore/close buttons to empty space */
+/* #TabsToolbar > .titlebar-buttonbox-container { */
+/*   display: block; */
+/*   position: absolute; */
+/*   top: 13px; */
+/*   right: 2px; */
+/* } */
+/******************************************************/
+
+/* hide the header of the tree style tabs sidebar */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
+  #sidebar-header {
+  display: none;
+}
+/**************************************************/
+
+/* reduce the minimum width of the sidebar */
+/*
+#sidebar {
+  min-width: 30px !important;
+}
+*/
+/**************************************************/
+
+/* auto-hide sidebar when fullscreen */
+#main-window[inFullscreen] #sidebar-box,
+#main-window[inFullscreen] #sidebar-splitter {
+  display: none !important;
+  width: 0px !important;
+}
+/*************************************/
+
+/* show on hover */
+/* Collapse in default state and add transition */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
+  overflow: hidden;
+  min-width: 40px !important;
+  max-width: 60px !important;
+  transition: all 0.2s ease;
+  border-right: 1px solid #0c0c0d;
+  z-index: 2;
+}
+
+/*Expand to 260px on hover*/
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover,
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
+  #sidebar {
+  min-width: 260px !important;
+  max-width: 260px !important;
+  z-index: 1;
+}
+
+/* END CONFIGURATIONS FOR TREE STYLE TABS */
